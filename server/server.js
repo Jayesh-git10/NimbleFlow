@@ -16,6 +16,7 @@ connectDB();
 // Middleware
 const allowedOrigins = [
   process.env.FRONTEND_URL?.replace(/\/$/, ""),
+  "https://nimble-flow.vercel.app",
   "http://localhost:5173"
 ].filter(Boolean);
 
@@ -26,7 +27,7 @@ app.use(
       if (allowedOrigins.indexOf(origin) !== -1) {
         return callback(null, true);
       } else {
-        return callback(new Error("Not allowed by CORS"), false);
+        return callback(null, false);
       }
     },
     credentials: true
