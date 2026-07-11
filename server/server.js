@@ -5,6 +5,7 @@ import { connectDB } from "./src/config/db.js";
 
 import userRoutes from "./src/routes/user.routes.js";
 import messageRoutes from "./src/routes/message.routes.js";
+import "./src/queues/worker.js";
 
 dotenv.config();
 
